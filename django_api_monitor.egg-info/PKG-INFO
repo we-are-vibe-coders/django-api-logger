@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: django-api-monitor
+Version: 0.1.0
+Summary: Reusable Django app for monitoring API usage and security.
+Author: anirudh_mk
+License: MIT
+Classifier: Framework :: Django
+Classifier: Programming Language :: Python
+Classifier: License :: OSI Approved :: MIT License
