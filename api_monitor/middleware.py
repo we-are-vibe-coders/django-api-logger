@@ -175,14 +175,14 @@ class APIMonitorMiddleware(MiddlewareMixin):
                 role_emails = AlertRecipient.objects.filter(designation=role).values_list('email', flat=True)
                 recipients.update(role_emails)
 
-        if recipients:
-            send_mail(
-                subject=log_instance.type + " Alert",
-                message=json.dumps({
-                    "log": log_instance.__dict__,
-                    "fingerprint": self.client_finger_print_instance.__dict__,
-                }, default=str),
-                from_email=settings.EMAIL_HOST_USER,
-                recipient_list=list(recipients),
-                fail_silently=False
-            )
+        # if recipients:
+        #     send_mail(
+        #         subject=log_instance.type + " Alert",
+        #         message=json.dumps({
+        #             "log": log_instance.__dict__,
+        #             "fingerprint": self.client_finger_print_instance.__dict__,
+        #         }, default=str),
+        #         from_email=settings.EMAIL_HOST_USER,
+        #         recipient_list=list(recipients),
+        #         fail_silently=False
+        #     )

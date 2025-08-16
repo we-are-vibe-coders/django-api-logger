@@ -8,6 +8,7 @@ class ClientFingerprint(models.Model):
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
     token = models.TextField(blank=True)
     ip_address = models.GenericIPAddressField()
+    host = models.CharField(max_length=255, blank=True)
     user_agent = models.TextField(blank=True)
     country = models.CharField(max_length=100, blank=True)
     session_id = models.CharField(max_length=255, blank=True)
