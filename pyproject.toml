@@ -1,3 +1,41 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
+requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-api-logger"
+version = "0.1.0"
+description = "A reusable Django app for monitoring API usage and security."
+readme = "README.md"
+requires-python = ">=3.7"
+license = { text = "MIT" }
+
+authors = [
+  { name="We Are Vibe Coders", email="we.are.vibe.coders@gmail.com" }
+]
+maintainers = [
+  { name="Anirudh MK", email="its.me.anirudh.mk@gmail.com" },
+]
+classifiers = [
+  "Framework :: Django",
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License"
+]
+dependencies = ["Django>=4.0", "psutil"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["api_monitor"]
+
+[tool.setuptools.package-data]
+"api_monitor" = [
+    "templates/**/*",
+    "static/**/*",
+    "migrations/**/*"
+]
+
+[project.urls]
+Homepage = "https://github.com/we-are-vibe-coders/django-api-logger"
+Documentation = "https://github.com/we-are-vibe-coders/django-api-loggert#readme"
+Source = "https://github.com/we-are-vibe-coders/django-api-logger"
+Issues = "https://github.com/we-are-vibe-coders/django-api-logger/issues"
