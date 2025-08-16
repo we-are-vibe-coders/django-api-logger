@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 class ApiMonitorConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'api_logger'
+    name = 'api_monitor'

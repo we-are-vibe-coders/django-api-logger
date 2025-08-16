@@ -13,7 +13,7 @@ from .models import APIAccessLog, AlertRecipient
 @admin.register(APIAccessLog)
 class APIAccessLogAdmin(admin.ModelAdmin):
     list_display = (
-        'api_request_log_user_log__user__username',
+        # 'api_request_log_user_log__user__username',
         'view_name',
         'url_path',
         'request_method',
@@ -22,11 +22,11 @@ class APIAccessLogAdmin(admin.ModelAdmin):
         'is_error',
         'is_suspicious',
         'is_sql_injection_suspected',
-        'is_rate_limited',
+        # 'is_rate_limited',
         'timestamp',
     )
     search_fields = (
-        'api_request_log_user_log__user__username',
+        # 'api_request_log_user_log__user__username',
         'view_name',
         'url_path',
         'request_method',
@@ -35,7 +35,7 @@ class APIAccessLogAdmin(admin.ModelAdmin):
         'is_error',
         'is_suspicious',
         'is_sql_injection_suspected',
-        'is_rate_limited',
+        # 'is_rate_limited',
         'timestamp',
     )
     list_filter = (
@@ -44,7 +44,7 @@ class APIAccessLogAdmin(admin.ModelAdmin):
         'is_error',
         'is_suspicious',
         'is_sql_injection_suspected',
-        'is_rate_limited',
+        # 'is_rate_limited',
         'timestamp',
     )
 
@@ -64,7 +64,7 @@ class APIAccessLogAdmin(admin.ModelAdmin):
             'cookie_data', 'execution_time', 'duration_bucket', 'memory_usage',
             'cpu_percent', 'query_count', 'is_error', 'error_type', 'error_description',
             'is_suspicious', 'suspicious_reason', 'is_sql_injection_suspected',
-            'sql_injection_pattern', 'is_rate_limited', 'rate_limited_reason'
+            'sql_injection_pattern', 'rate_limited_reason'
         ])
         for data in queryset:
             user_log = getattr(data, 'api_request_log_user_log', None)
@@ -93,7 +93,7 @@ class APIAccessLogAdmin(admin.ModelAdmin):
                 data.suspicious_reason,
                 data.is_sql_injection_suspected,
                 getattr(data, 'sql_injection_pattern', ''),
-                data.is_rate_limited,
+                # data.is_rate_limited,
                 getattr(data, 'rate_limited_reason', ''),
             ])
         return response
